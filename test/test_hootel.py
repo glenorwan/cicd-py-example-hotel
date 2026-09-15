@@ -45,6 +45,8 @@ class TestHootel(object):
         time.sleep(1)
 
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
+        allure.dynamic.description(f"email: {USERDATA['gooduser']['email']}\npassword: {USERDATA['gooduser']['password']}")
+
         assert logout_btn.text == "Kilépés"
 
     @allure.title("List Hotels")
